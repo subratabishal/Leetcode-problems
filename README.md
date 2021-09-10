@@ -1,4 +1,4 @@
-# Leetcode-problems
+# LeetCode-problems
 This repository is locally named Learn Java with Kunal and is maintained and updated by me.
 * This repo contains solutions to easy and medium LeetCode problems.
 * You can propose changes to the contents of this repository if you find something wrong with the code.
