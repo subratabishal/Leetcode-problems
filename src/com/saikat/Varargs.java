@@ -13,6 +13,6 @@ public class Varargs {
     }
     static void MultipleArgs(int a, String b, char ...c)
     {
-
+        
     }
 }
