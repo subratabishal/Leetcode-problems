@@ -20,7 +20,6 @@ public class SelSort
             }
             swap(arr, maxpos, l-1-j);
         }
-
     }
     static  void swap(int[] arr, int i, int j)
     {
