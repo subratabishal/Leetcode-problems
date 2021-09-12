@@ -5,7 +5,7 @@ import java.util.Scanner;
 class Patterns {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        //int n = sc.nextInt();
+        int n = sc.nextInt();
         // pat1(n);
         // pat2(n);
         // pat3(n);
@@ -19,7 +19,9 @@ class Patterns {
         //pat11(n);
         //pat12(n);
         //pat13(n);
-        pat14();
+        //pat28(n);
+        //pat14();
+        pat26(n);
     }
     static void pat1(int n)
     {
@@ -205,5 +207,27 @@ class Patterns {
             System.out.print(" ");
         }
         System.out.println("*");
+    }
+    static void pat28(int n)
+    {
+        for (int i = 0; i < 2*n; i++) {
+            int c = i>n?2*n-i:i;
+            for (int j = 0; j < n-c; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j < c; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+    static void pat26(int n)
+    {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n-i+1; j++) {
+                System.out.print(i+" ");
+            }
+            System.out.println();
+        }
     }
 }
