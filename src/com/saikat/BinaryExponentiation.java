@@ -9,15 +9,15 @@ public class BinaryExponentiation {
         double base = in.nextDouble();
         System.out.println("Enter exponent");
         int power = in.nextInt();
-        System.out.println(binaryExonentiation(base, power));
+        System.out.println(binaryExponentiation(base, power));
     }
-    static double binaryExonentiation(double x, int n)
+    static double binaryExponentiation(double x, int n)
     {
         if(n<0)
             return negPow(x,n);
         if(n==0)
             return 1; //base case
-        double res = binaryExonentiation(x,n/2);
+        double res = binaryExponentiation(x,n/2);
         if(n%2==1)
             return x*(res*res); // if n is odd
         return res*res;
@@ -26,7 +26,7 @@ public class BinaryExponentiation {
     {
         if(n<0)
             return 1/x*negPow(1/x,-(n+1));
-        return binaryExonentiation(x,n);
+        return binaryExponentiation(x,n);
     }
 
 }
