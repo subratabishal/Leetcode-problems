@@ -20,8 +20,10 @@ class Patterns {
         //pat12(n);
         //pat13(n);
         //pat28(n);
-        //pat14();
-        pat26(n);
+        // pat14();
+        // pat26(n);
+        //pat21(n);
+        pat22(n);
     }
     static void pat1(int n)
     {
@@ -226,6 +228,31 @@ class Patterns {
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= n-i+1; j++) {
                 System.out.print(i+" ");
+            }
+            System.out.println();
+        }
+    }
+    static void pat21(int n)
+    {
+        int ctr=1;
+        for (int i=1;i<=n;i++)
+        {
+            for (int j=1;j<=i;j++)
+            {
+                System.out.print(ctr+" ");
+                ctr++;
+            }
+            System.out.println();
+        }
+    }
+    static void pat22(int n)
+    {
+
+        for (int i=1;i<=n;i++)
+        {
+            for (int j=1;j<=i;j++)
+            {
+                System.out.print((i+j+1)%2 + " ");
             }
             System.out.println();
         }
