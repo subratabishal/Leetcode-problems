@@ -11,7 +11,9 @@ public class SubArrayCombination {
         for (int i = 0; i < n; i++) {
             arr[i]=sc.nextInt();
         }
-
+        System.out.println("Enter sub-array length");
+        int r = sc.nextInt();
+        printCombination(arr, n, r);
     }
     static void combinationUtility(int[] arr, int[] data,
                                    int start, int end,
@@ -30,5 +32,6 @@ public class SubArrayCombination {
     static void printCombination(int[] arr, int n, int r)
     {
         int[] data = new int [r];
+        combinationUtility(arr,data,0,n-1,0,r);
     }
     }
