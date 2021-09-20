@@ -5,11 +5,6 @@ import java.util.function.Consumer;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
-/**
- * This class implements a dynamic array
- *
- * @param <E> the type that each index of the array will hold
- */
 public class DynamicArray<E> implements Iterable<E> {
     private static final int DEFAULT_CAPACITY = 16;
 
@@ -17,11 +12,6 @@ public class DynamicArray<E> implements Iterable<E> {
     private int size;
     private Object[] elements;
 
-    /**
-     * constructor
-     *
-     * @param capacity the starting length of the desired array
-     */
     public DynamicArray(final int capacity) {
         this.size = 0;
         this.capacity = capacity;
@@ -33,11 +23,6 @@ public class DynamicArray<E> implements Iterable<E> {
         this(DEFAULT_CAPACITY);
     }
 
-    /**
-     * Adds an element to the array If full, creates a copy array twice the size of the current one
-     *
-     * @param element the element of type <E> to be added to the array
-     */
     public void add(final E element) {
         if (this.size == this.elements.length) {
             this.elements = Arrays.copyOf(this.elements, newCapacity(2 * this.capacity));
@@ -47,32 +32,13 @@ public class DynamicArray<E> implements Iterable<E> {
         size++;
     }
 
-    /**
-     * Places element of type <E> at the desired index
-     *
-     * @param index the index for the element to be placed
-     * @param element the element to be inserted
-     */
     public void put(final int index, E element) {
         this.elements[index] = element;
     }
 
-    /**
-     * get method for element at a given index returns null if the index is empty
-     *
-     * @param index the desired index of the element
-     * @return <E> the element at the specified index
-     */
     public E get(final int index) {
         return getElement(index);
     }
-
-    /**
-     * Removes an element from the array
-     *
-     * @param index the index of the element to be removed
-     * @return <E> the element removed
-     */
     public E remove(final int index) {
         final E oldElement = getElement(index);
         fastRemove(this.elements, index);
@@ -81,21 +47,9 @@ public class DynamicArray<E> implements Iterable<E> {
             this.elements = Arrays.copyOf(this.elements, newCapacity(this.capacity / 2));
         return oldElement;
     }
-
-    /**
-     * get method for size field
-     *
-     * @return int size
-     */
     public int getSize() {
         return this.size;
     }
-
-    /**
-     * isEmpty helper method
-     *
-     * @return boolean true if the array contains no elements, false otherwise
-     */
     public boolean isEmpty() {
         return this.size == 0;
     }
@@ -183,10 +137,6 @@ public class DynamicArray<E> implements Iterable<E> {
         }
     }
 
-    /**
-     * This class is the driver for the DynamicArray<E> class it tests a variety of methods and prints
-     * the output
-     */
     public static void main(String[] args) {
         DynamicArray<String> names = new DynamicArray<>();
         names.add("Peubes");
