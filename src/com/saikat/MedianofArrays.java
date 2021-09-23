@@ -12,9 +12,7 @@ public class MedianofArrays {
         int m = nums1.length;
         int n = nums2.length;
         int i = 0, j = 0, k = 0;
-        // calculating the mean size of both the arrays and using it to make a new array of size t + 1.
-        // if mean size is 5 suppose, then the indices of new array will be 0 1 2 3 4 5;
-        // I can just return the last index if (m+n) is odd and if even I can return (ans[4] + ans[5])/2;
+
         int t = (m + n)/2;
         int[] ans = new int[t + 1];
 
@@ -35,7 +33,6 @@ public class MedianofArrays {
                 k++; j++;
             }
         }
-        // checking for remaining values if the return call in the above loop is not executed;
         while(j < n){
             ans[k] = nums2[j];
             if(k == t){
