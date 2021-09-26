@@ -46,9 +46,7 @@ public class bitwiseOperators {
             System.out.print("\nOctal = ");
             for (int i = octI-1; i >= 0 ; i--) {
                 int dig = arrOct.get(i);
-                if(dig == 0)
-                    continue;
-                else
+                if(dig != 0)
                     System.out.print(dig);
             }
         }
